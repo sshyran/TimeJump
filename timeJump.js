@@ -50,24 +50,32 @@
 
     var timestamp,
         media,
+        soundcloudPlayer = document.querySelector('#soundcloud-player iframe'),
         t = getQueryVariable() || 0;
     if (t) {
-        timestamp = parseTime(t);
-        media = document.querySelector('audio, video');
-        if (!!media) {
-            // Preload the media
-            media.setAttribute('preload', 'true');
-            // Set the current time. Will update if playing. Will fail if paused.
-            media.currentTime = timestamp;
-            // If the media is able to play, play.
-            media.addEventListener('canplay', function () {
-                /* only start the player if it is not already playing */
-                if( !this.paused){
-                    return false;
-                }
-                this.currentTime = timestamp;
-                this.play();
-            }, false);
+        if(!soundcloudPlayer) {
+            timestamp = parseTime(t);
+            media = document.querySelector('audio, video');
+            if (!!media) {
+                // Preload the media
+                media.setAttribute('preload', 'true');
+                // Set the current time. Will update if playing. Will fail if paused.
+                media.currentTime = timestamp;
+                // If the media is able to play, play.
+                media.addEventListener('canplay', function () {
+                    /* only start the player if it is not already playing */
+                    if( !this.paused){
+                        return false;
+                    }
+                    this.currentTime = timestamp;
+                    this.play();
+                }, false);
+            }
+        } else {
+            var scIFRAME = document.querySelector('#soundcloud-player iframe'),
+                scPlayer = SC.Widget(scIFRAME);
+            timestamp = parseTime(t)*1000;
+            scPlayer.seekTo(timestamp);
         }
     }
 
