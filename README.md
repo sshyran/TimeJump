@@ -33,5 +33,14 @@ Known to work with the following native HTML5 audio/video wrappers:
 - [MediaElement.js](http://mediaelementjs.com)
 - [SoundCloud Widget](https://developers.soundcloud.com/docs/api/html5-widget)
 
+### Using with SoundCloud Widget?
+Just wrap the player (an `iframe` element) into a `div` with id `soundcloud-player`, like the following:
+
+```
+<div id="soundcloud-player">
+    <iframe ...></iframe>
+</div>
+```
+
 ## TODO List:
 - Temporal clipping (Ending times).
