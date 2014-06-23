@@ -20,7 +20,7 @@ Supported URL formats include:
 
     Quirks Mode (YouTube-style) w/ hash or query:
     http://mypodca.st/first-episode/?t=1h23m45s
-    http://mypodca.st/first-episode/#t=1m23s        
+    http://mypodca.st/first-episode/#t=1m23s
 
 - Hash: Player will update when the browser's `location.hash` changes. This means that your episode page  can link to timeframes within the page without requiring a page reload.
 - Query: Requires page reload.
@@ -31,6 +31,7 @@ In order to support the [Media Fragments standard](http://www.w3.org/TR/2012/PR-
 Known to work with the following native HTML5 audio/video wrappers:
 
 - [MediaElement.js](http://mediaelementjs.com)
+- [SoundCloud Widget](https://developers.soundcloud.com/docs/api/html5-widget)
 
 ## TODO List:
 - Temporal clipping (Ending times).
