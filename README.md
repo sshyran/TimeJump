@@ -34,12 +34,17 @@ Known to work with the following native HTML5 audio/video wrappers:
 - [SoundCloud Widget](https://developers.soundcloud.com/docs/api/html5-widget)
 
 ### Using with SoundCloud Widget?
-Just wrap the player (an `iframe` element) into a `div` with id `soundcloud-player`, like the following:
+
+Make sure you've added the SoundCloud Widget script on your page like: `<script src="https://w.soundcloud.com/player/api.js"></script>`.
+
+Then, wrap the player (an `iframe` element) into a `<div>` with id `soundcloud-player`, like the following:
 
 ```
 <div id="soundcloud-player">
     <iframe ...></iframe>
 </div>
+
+<script src="https://w.soundcloud.com/player/api.js"></script>
 ```
 
 ## TODO List:
